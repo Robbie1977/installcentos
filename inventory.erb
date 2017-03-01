@@ -13,6 +13,17 @@ openshift_public_hostname=console.virtualflybrain.org
 openshift_master_default_subdomain=apps.console.virtualflybrain.org
 openshift_hosted_metrics_deploy=false
 openshift_master_overwrite_named_certificates=true
+oauthConfig:
+  
+  identityProviders:
+  - name: github 
+    challenge: false 
+    login: true 
+    provider:
+      apiVersion: v1
+      kind: GitHubIdentityProvider
+      clientID: ... 
+      clientSecret:
 
 [masters]
 console.virtualflybrain.org openshift_schedulable=true
